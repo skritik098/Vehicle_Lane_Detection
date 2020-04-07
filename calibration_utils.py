@@ -10,8 +10,9 @@ def lazy_calibration(func):
     """
     Decorator for calibration function to avoid re-computing calibration every time.
     """
-    calibration_cache = 'camera_cal/calibration_data.pickle'
+    calibration_cache = '/content/Vehicle_Lane_Detection/camera_cal/calibration_data.pickle'
 
+### Changes the Caliberation path to the Colab Perspective##
     def wrapper(*args, **kwargs):
         if path.exists(calibration_cache):
             print('Loading cached camera calibration...', end=' ')
